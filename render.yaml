@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: nfcorpus-ir
+    runtime: python
+    buildCommand: pip install -r servicio_ir/requirements.txt
+    startCommand: python -m uvicorn servicio_ir.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
